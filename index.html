@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Realm</title>
+    <link rel="icon" type="image/x-icon" href="book.png" />
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!--nav-bar-->
+    <section>
+      <nav>
+        <div class="logo">
+          <img src="book.png" height="90px" width="90px" />
+        </div>
+
+        <ul>
+          <li>
+            <a href="#Home">Home</a>
+          </li>
+          <li>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#featured">Featured</a>
+          </li>
+          <li>
+            <a href="#Arrivals">Arrivals</a>
+          </li>
+          <li>
+            <a href="#review">Reviews</a>
+          </li>
+          <li>
+            <a href="login.html">Login</a>
+          </li>
+          <li>
+            <a href="#cartModalContainer" class="cart-icon" id="cartIcon"
+              >Cart</a
+            >
+          </li>
+        </ul>
+
+        <div class="social_icon">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-solid fa-heart"></i>
+        </div>
+
+        <div class="cart-modal" id="cartModal">
+          <h2>Cart</h2>
+          <table id="cartTable">
+            <thead>
+              <tr>
+                <th id="th1">Book</th>
+                <th id="th2">Price</th>
+                <th id="th3">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="cartItems"></tbody>
+          </table>
+          <p>Total: Rs<span id="totalAmount">0</span></p>
+          <button onclick="closeCart()">Close</button>
+          <button onclick="checkout()">Checkout</button>
+        </div>
+      </nav>
+      <!--banner-->
+      <div class="main">
+        <div class="main_tag">
+          <h1>
+            WELCOME TO<br />
+            <span>BOOK REALM</span>
+          </h1>
+
+          <p>
+            At Book Realm, we invite you to embark on a journey through the
+            captivating world of literature without breaking the bank. Our
+            online book store is a sanctuary for book enthusiasts seeking to
+            explore their favorite genres while enjoying the thrill of
+            discovering new literary gems.
+          </p>
+          <a href="#" class="main_btn">Learn More</a>
+        </div>
+
+        <div class="main_img">
+          <img src="image/table.png" />
+        </div>
+      </div>
+    </section>
+
+    <!--Services-->
+
+    <div class="services">
+      <div class="services_box">
+        <div class="services_card">
+          <i class="fa-solid fa-truck-fast"></i>
+          <h3>Fast Delivery</h3>
+        </div>
+
+        <div class="services_card">
+          <i class="fa-solid fa-headset"></i>
+          <h3>24 x 7 Services</h3>
+        </div>
+
+        <div class="services_card">
+          <i class="fa-solid fa-tag"></i>
+          <h3>Best Deal</h3>
+        </div>
+
+        <div class="services_card">
+          <i class="fa-solid fa-lock"></i>
+          <h3>Secure Payment</h3>
+        </div>
+      </div>
+    </div>
+
+    <!--About-->
+
+    <div class="about" id="about">
+      <div class="about_image">
+        <img src="image/about.png" />
+      </div>
+      <div class="about_tag">
+        <h1>About Us</h1>
+        <p>
+          In the vast expanse of Book Realm, you'll find an extensive collection
+          of books meticulously curated to cater to every taste and interest.
+          Whether you're a lover of heartwarming romance, an aficionado of
+          spine-tingling mysteries, a seeker of epic fantasy quests, or an
+          explorer of thought-provoking non-fiction, we've got your genre
+          covered. Navigating through Book Realm's user-friendly interface, you
+          can effortlessly search for books by genre, author, or title. Our
+          recommendation engine helps you uncover hidden treasures that align
+          with your preferences, giving you a chance to step out of your comfort
+          zone while staying true to your reading identity.
+        </p>
+        <a href="#" class="about_btn">Learn More</a>
+      </div>
+    </div>
+    <!--Books-Genre-->
+    <div class="books-heading" id="featured">Choose Your favrourite Genre</div>
+    <br />
+    <br />
+    <div class="books-fiction">
+      <p>Fiction</p>
+    </div>
+    <br />
+    <div class="books-cards">
+      <div class="books-types" id="book1">
+        <div class="books-text">
+          <p id="text">
+            This is the age of vice, where money, pleasure, and power are
+            everything, and the family ties that bind can also kill.
+          </p>
+          <p><i class="fa-solid fa-indian-rupee-sign"></i>500</p>
+          <button id="addcart" onclick="addToCart('Age of Vice', 500)">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+      <div class="books-types" id="book2">
+        <div class="books-text">
+          <p id="text">
+            The World and All That It Holds--in all its hilarious. It is a
+            grand, tender, sweeping story that spans decades and continents.
+          </p>
+          <p><i class="fa-solid fa-indian-rupee-sign"></i>999</p>
+          <button
+            id="addcart"
+            onclick="addToCart('The world and All that it holds', 999)"
+          >
+            Add to Cart
+          </button>
+        </div>
+      </div>
+      <div class="books-types" id="book3">
+        <div class="books-text">
+          <p id="text">
+            The first novel, by the historian Dan Jones, imagines a hard-bitten
+            band of mercenaries hired to invade France on behalf of their
+            English king
+          </p>
+          <p><i class="fa-solid fa-indian-rupee-sign"></i>899</p>
+          <button id="addcart" onclick="addToCart('Essex dogs', 899)">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="books-fiction">
+      <p>Children's Books</p>
+    </div>
+    <br />
+    <div class="books-cards2">
+      <div class="books-types" id="book4">
+        <div class="books-text">
+          <p id="text">
+            Soothe a little one to sleep with a dreamy bedtime adventure. Show
+            them all the wonderful places they could go, and all the things they
+            could be.
+          </p>
+          <p><i class="fa-solid fa-indian-rupee-sign"></i>499</p>
+          <button onclick="addToCart('Dream Big, Little One', 499)">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+      <div class="books-types" id="book5">
+        <div class="books-text">
+          <p id="text">
+            Children will relate to Baby Llama’s need for comfort, as much as
+            parents will appreciate Mama Llama’s reassuring message.
+          </p>
+          <p><i class="fa-solid fa-indian-rupee-sign"></i>399</p>
+          <button onclick="addToCart('llama llama..', 399)">Add to Cart</button>
+        </div>
+      </div>
+      <div class="books-types" id="book6">
+        <div class="books-text">
+          <p id="text">
+            When David Shannon was five years old, he wrote and illustrated his
+            first book. On every page were these words: No, David!
+          </p>
+          <p><i class="fa-solid fa-indian-rupee-sign"></i>399</p>
+          <button onclick="addToCart('llama llama..', 399)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="books-fiction">
+      <p>Educational</p>
+    </div>
+    <br />
+    <div class="books-cards2">
+      <div class="books-types2" id="book7">
+        <div class="books-text2">
+          <p id="text">
+            In Sapiens – A Brief History of Humankind Yuval Noah Harari provides
+            sources for some of the information cited. He is committed to adding
+            to this list on an ongoing basis, to cover as much of the book as
+            possible
+          </p>
+          <p><i class="fa-solid fa-indian-rupee-sign"></i>399</p>
+          <button onclick="addToCart('Sapiens', 699)">Add to Cart</button>
+        </div>
+      </div>
+      <div class="books-types2" id="book8">
+        <div class="books-text2">
+          <p id="text">
+            Engaging the reader in a conversation about how we think, Kahneman
+            reveals where we can and cannot trust our intuitions and how we can
+            tap into the benefits of slow thinking.Thinking, Fast and Slow will
+            transform the way you think about thinking.
+          </p>
+          <p><i class="fa-solid fa-indian-rupee-sign"></i>799</p>
+          <button onclick="addToCart('Thinking fast N Slow', 799)">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+      <div class="books-types2" id="book9">
+        <div class="books-text2">
+          <p id="text">
+            The Power of Now is one of those rare books with the power to create
+            an experience in readers, one that can radically change their lives
+            for the better. Eckhart Tolle uses simple language and an easy
+            question-and-answer format to guide us.
+          </p>
+          <p><i class="fa-solid fa-indian-rupee-sign"></i>799</p>
+          <button onclick="addToCart('The Power Of Now', 799)">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="books-fiction">
+      <p>Science and Nature</p>
+    </div>
+    <br />
+    <div class="books-cards2">
+      <div class="books-types" id="book10">
+        <div class="books-text">
+          <p id="text">
+            Behind the Beautiful Forevers carries the reader into one of the
+            twenty-first century's hidden worlds, and into the lives of people
+            impossible to forget.
+          </p>
+          <p><i class="fa-solid fa-indian-rupee-sign"></i>699</p>
+          <button onclick="addToCart('Behind the beautiful...', 699)">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+      <div class="books-types" id="book11">
+        <div class="books-text">
+          <p id="text">
+            The Omnivore’s Dilemma promises to change the way we think about the
+            pleasure of eating. For anyone, dinner will never again look, quite
+            the same.
+          </p>
+          <p><i class="fa-solid fa-indian-rupee-sign"></i>599</p>
+          <button onclick="addToCart('Omnivores dilemma', 599)">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+      <div class="books-types" id="book12">
+        <div class="books-text">
+          <p id="text">
+            Clint Smith's How the Word Is Passed journeys through significant
+            sites, confronting America's slave legacy, illuminating history's
+            relevance today.
+          </p>
+          <p><i class="fa-solid fa-indian-rupee-sign"></i>699</p>
+          <button onclick="addToCart('How the Word is passed', 699)">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="books-fiction">
+      <p>Biographies</p>
+    </div>
+    <br />
+    <div class="books-cards2">
+      <div class="books-types" id="book13">
+        <div class="books-text">
+          <p id="text">
+            Long Walk to Freedom recounts his anti-apartheid activism,
+            imprisonment, and presidency, symbolizing resilience, justice, and
+            reconciliation.
+          </p>
+          <p><i class="fa-solid fa-indian-rupee-sign"></i>599</p>
+          <button onclick="addToCart('Long Walk to freedom', 599)">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+      <div class="books-types" id="book14">
+        <div class="books-text">
+          <p id="text">
+            His spiritual journey from India to the West, sharing insights into
+            yoga, meditation, and inner awakening, inspiring seekers worldwide.
+          </p>
+          <p><i class="fa-solid fa-indian-rupee-sign"></i>699</p>
+          <button onclick="addToCart('Yogi', 699)">Add to Cart</button>
+        </div>
+      </div>
+      <div class="books-types" id="book15">
+        <div class="books-text">
+          <p id="text">
+            I Am Malala narrates Malala Yousafzai's life under Taliban rule,and
+            her global impact as a voice for education and equality.
+          </p>
+          <p><i class="fa-solid fa-indian-rupee-sign"></i>599</p>
+          <button onclick="addToCart('I Am Malala', 599)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <!--Review Section-->
+    <div class="container" id="review">
+      <div class="mgb-40 padb-30 auto-invert line-b-4 align-center">
+        <h4
+          class="font-cond-l fg-accent lts-md mgb-10"
+          contenteditable="false"
+        ></h4>
+
+        <h1
+          class="font-cond-b fg-text-d lts-md fs-300 fs-300-xs no-mg"
+          contenteditable="false"
+          style="color: #ff6969"
+        >
+          Customer Reviews
+        </h1>
+      </div>
+      <ul class="hash-list cols-3 cols-1-xs pad-30-all align-center text-sm">
+        <li>
+          <img
+            src="https://bootdey.com/img/Content/avatar/avatar3.png"
+            class="wpx-100 img-round mgb-20"
+            title=""
+            alt=""
+            data-edit="false"
+            data-editor="field"
+            data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]"
+          />
+          <p class="fs-110 font-cond-l" contenteditable="false">
+            "Book Realm is my go-to place for fiction novels. The collection is
+            diverse, from classic literature to the latest bestsellers. The
+            browsing experience is smooth, and they often have exclusive
+            editions that are hard to find elsewhere. Five stars for keeping my
+            imagination alive! "
+          </p>
+          <h5 class="font-cond mgb-5 fg-text-d fs-130" contenteditable="false">
+            Martha Stewart
+          </h5>
+          <small
+            class="font-cond case-u lts-sm fs-80 fg-text-l"
+            contenteditable="false"
+          >
+            Woman - New York</small
+          >
+        </li>
+        <li>
+          <img
+            src="https://bootdey.com/img/Content/avatar/avatar4.png"
+            class="wpx-100 img-round mgb-20"
+            title=""
+            alt=""
+            data-edit="false"
+            data-editor="field"
+            data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]"
+          />
+          <p class="fs-110 font-cond-l" contenteditable="false">
+            " Learning never stops, and Book Realm understands that. Their
+            collection of educational books spans various subjects and skill
+            levels. Whether you're a student or someone looking to acquire new
+            skills, this is the place to explore. A wider range of online
+            courses would be a fantastic addition, though. "
+          </p>
+          <h5 class="font-cond mgb-5 fg-text-d fs-130" contenteditable="false">
+            Liam Menage
+          </h5>
+          <small
+            class="font-cond case-u lts-sm fs-80 fg-text-l"
+            contenteditable="false"
+            >Recording Artist - Los Angeles</small
+          >
+        </li>
+        <li>
+          <img
+            src="https://bootdey.com/img/Content/avatar/avatar7.png"
+            class="wpx-100 img-round mgb-20"
+            title=""
+            alt=""
+            data-edit="false"
+            data-editor="field"
+            data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]"
+          />
+          <p class="fs-110 font-cond-l" contenteditable="false">
+            " As an educator, Book Realm's children's book section is a treasure
+            trove for classroom reading. The diverse characters and engaging
+            plots cater to various age groups. Adding a dedicated section for
+            educational children's books that combine learning and storytelling
+            would be an excellent addition. "
+          </p>
+          <h5 class="font-cond mgb-5 fg-text-d fs-130" contenteditable="false">
+            Sean Carter
+          </h5>
+          <small
+            class="font-cond case-u lts-sm fs-80 fg-text-l"
+            contenteditable="false"
+            >Teacher - Chicago</small
+          >
+        </li>
+      </ul>
+    </div>
+    <br />
+    <br />
+    <!--Footer-->
+    <footer class="footer-distributed">
+      <div class="footer-left">
+        <h3>BOOK<span>REALM</span></h3>
+
+        <p class="footer-links">
+          <a href="#">Home</a>
+          ·
+          <a href="#">Blog</a>
+          ·
+          <a href="#">Pricing</a>
+          ·
+          <a href="#">About</a>
+          ·
+          <a href="#">Faq</a>
+          ·
+          <a href="#">Contact</a>
+        </p>
+
+        <p class="footer-company-name">Book Realm © 2023</p>
+
+        <div class="footer-icons">
+          <a href="#">
+            <i class="fa-brands fa-square-facebook"></i>
+          </a>
+          <a href="#">
+            <i class="fa-brands fa-square-twitter"></i>
+          </a>
+          <a href="#">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a href="#">
+            <i class="fa-brands fa-square-github"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-right">
+        <p>Contact Us</p>
+
+        <form action="#" method="post">
+          <input type="text" name="email" placeholder="Email" />
+          <textarea name="message" placeholder="Message"></textarea>
+          <button>Send</button>
+        </form>
+      </div>
+    </footer>
+
+    <!--Script-->
+    <script src="script.js"></script>
+  </body>
+</html>

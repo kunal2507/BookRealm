@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <style>
+        
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+             background-image: url(10.png);
+            background-size: cover;
+            backdrop-filter: blur(2px);
+            
+            
+
+        }
+      
+
+        .login-container {
+            background-color: rgba(255,255,255,0.8);
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+                  transition: transform 0.3s ease-in-out;
+                  width: 300px;
+                  position: relative;
+                  z-index: 1;
+                  
+        }
+      
+        .login-container:hover {
+            transform: scale(1.02);
+        }
+
+        .error-message {
+            color: #ff0000;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            }
+
+        label {
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        input:focus {
+            border-color: #007bff;
+        }
+         button {
+            margin-top: 15px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Login</button>
+        </form>
+        <p id="errorMessage" class="error-message"></p>
+    </div>
+    
+    <script>
+        const loginForm = document.getElementById("loginForm");
+        const errorMessage = document.getElementById("errorMessage");
+
+        loginForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const name = loginForm.name.value;
+            const email = loginForm.email.value;
+            const password = loginForm.password.value;
+
+            // Simulate server-side validation
+            if (email === "user@hello.com" && password === "123456") {
+                // Successful login
+                errorMessage.textContent = "";
+                window.location.href = "index.html";
+                alert(`Welcome to Book Realm, ${name}!`);
+            } else {
+                // Failed login
+                errorMessage.textContent = "Invalid email or password. Please try again.";
+            }
+        });
+    </script>
+</body>
+</html>
